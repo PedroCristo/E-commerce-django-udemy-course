@@ -24,3 +24,18 @@ def products(request, category_slug=None):
         'products_count': products_count,
     }
     return render(request, 'products/products.html', context)
+
+
+def product_detail(request, category_slug, product_slug):
+    """
+    View to render the product detail page
+    """
+    try:
+        single_product = Product.objects.get(category__slug=category_slug, slug=product_slug)
+    except Exception as e:
+        raise e 
+
+    context = {
+        'single_product': single_product,
+    }        
+    return render(request, 'products/product_detail.html', context)    
