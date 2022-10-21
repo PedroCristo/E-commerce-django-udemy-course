@@ -28,7 +28,12 @@
 			<a href="./product-detail.html" class="img-wrap"> <img src="{{ product.image.url }}"> </a>
 			<figcaption class="info-wrap">
 				<a href="./product-detail.html" class="title">{{ product.product_name }}</a>
-				<div class="price mt-1">€{{ product.price }}</div> <!-- price-wrap.// -->
+				{% if product.old_price %}
+				<span class="price text-success"><strong>€{{ product.price }}</strong></span>
+				<del class="price-old text-danger">€{{ product.old_price}}</del>
+				{% else %}
+				<span class="price"><strong>€{{ product.price }}</strong></span>
+				{% endif %}
 			</figcaption>
 		</div>
 	</div> <!-- col.// -->
