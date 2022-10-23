@@ -10,7 +10,6 @@
         <h2 class="p-5">Your Shopping bag is empty!</h2>
         <a href="{% url 'products' %}" class="btn btn-primary mb-5">Continue Shopping</a>
     </div>
-
     {% else %}
     <div class="row">
     <aside class="col-lg-9">
@@ -31,7 +30,7 @@
             <figure class="itemside align-items-center">
                 <div class="aside"><img src="{{ cart_item.product.image.url }}" class="img-sm"></div>
                 <figcaption class="info">
-                    <a href="#" class="title text-dark">{{ cart_item.product.product_name }}</a>
+                    <a href="{{ cart_item.product.get_url }}" class="title text-dark">{{ cart_item.product.product_name }}</a>
                     <p class="text-muted small">Color: color <br>Size: L</p>
                 </figcaption>
             </figure>
@@ -86,7 +85,7 @@
                     <img src="{% static './images/misc/payments.png' %}" height="26">
                 </p>
                 <a href="./place-order.html" class="btn btn-primary btn-block"> Checkout </a>
-                <a href="./store.html" class="btn btn-light btn-block">Continue Shopping</a>
+                <a href="{% url 'products' %}" class="btn btn-light btn-block">Continue Shopping</a>
             </div> <!-- card-body.// -->
             </div> <!-- card.// -->
     </aside> <!-- col.// -->
