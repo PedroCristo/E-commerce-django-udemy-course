@@ -35,7 +35,7 @@
             <h6>Select Size</h6>
             <div class="btn-group btn-group-sm btn-group-toggle" data-toggle="buttons">
               {% for i in single_product.variation_set.sizes %}
-              <label class="btn btn-light {% if forloop.first %} active {% endif %}">
+              <label class="btn btn-light {% if forloop.counter == 2 %} active {% endif %}">
                 <input required type="radio" name="{{i.variation_category | lower }}" value="{{ i.variation_value | lower }}">{{ i.variation_value | capfirst }}
               </label>
               {% endfor %}
@@ -47,7 +47,7 @@
               <h6>Choose Color</h6>
               <div class="btn-group btn-group-sm btn-group-toggle" data-toggle="buttons">
                 {% for i in single_product.variation_set.colors %}
-                <label class="btn btn-light {% if forloop.first %} active {% endif %}">
+                <label class="btn btn-light {% if forloop.counter == 2 %} active {% endif %}">
                   <input required type="radio" name="{{i.variation_category | lower }}" value="{{ i.variation_value | lower }}">{{ i.variation_value | capfirst }}
                 </label>
                 {% endfor %}
@@ -59,7 +59,7 @@
               <h6>Choose Type</h6>
               <div class="btn-group btn-group-sm btn-group-toggle" data-toggle="buttons">
                 {% for i in single_product.variation_set.types %}
-                <label class="btn btn-light {% if forloop.first %} active {% endif %}">
+                <label class="btn btn-light {% if forloop.counter == 2 %} active {% endif %}">
                   <input required type="radio" name="{{i.variation_category | lower }}" value="{{ i.variation_value | lower }}">{{ i.variation_value | capfirst }}
                 </label>
                 {% endfor %}
