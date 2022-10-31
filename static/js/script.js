@@ -50,11 +50,13 @@ $(document).ready(function() {
 	if($('[data-toggle="tooltip"]').length>0) {  // check if element exists
 		$('[data-toggle="tooltip"]').tooltip()
 	} // end if
-
-
-
-
-    
 }); 
 // jquery end
+
+
+// Set  dismiss timeout for alert messages
+setTimeout(function(){
+    $('#messages').fadeOut('slow')
+}, 4000)
+
 
